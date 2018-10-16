@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "318357809575",
+    "firebase_url": "https://procm-2018.firebaseio.com",
+    "project_id": "procm-2018",
+    "storage_bucket": "procm-2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318357809575:android:1fc3a008feb02c47",
+        "android_client_info": {
+          "package_name": "com.technoidentity.procm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318357809575-mt7fauf5olibcpqe4t11pe4cbupn9hpv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGzw5YTfMGvUq32Evql8FGQvpMEZEUf5o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
