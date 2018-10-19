@@ -1,4 +1,4 @@
-package com.technoidentity.procm.dagger
+package com.technoidentity.procm.dagger.modules
 
 import dagger.Module
 

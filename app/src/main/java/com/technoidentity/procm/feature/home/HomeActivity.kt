@@ -8,8 +8,14 @@ import com.technoidentity.procm.feature.base.BaseActivity
 import com.technoidentity.procm.utils.AppPrefs
 import javax.inject.Inject
 
+/**
+ * Home Activity(Main Screen)
+ */
 class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
 
+  /**
+   * Get ViewModel Factory From DI
+   */
   @Inject
   lateinit var viewModelFactory: ViewModelProvider.Factory
 

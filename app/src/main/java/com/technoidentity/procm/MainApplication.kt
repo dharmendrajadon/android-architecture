@@ -1,7 +1,7 @@
 package com.technoidentity.procm
 
 import com.google.firebase.FirebaseApp
-import com.technoidentity.procm.dagger.DaggerAppComponent
+import com.technoidentity.procm.dagger.components.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 

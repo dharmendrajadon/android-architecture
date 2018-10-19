@@ -12,7 +12,9 @@ import android.view.inputmethod.InputMethodManager
 import com.technoidentity.procm.BR
 import dagger.android.support.DaggerAppCompatActivity
 
-
+/**
+ * Base Activity for initialization and base configurations
+ */
 abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerAppCompatActivity() {
 
   /**

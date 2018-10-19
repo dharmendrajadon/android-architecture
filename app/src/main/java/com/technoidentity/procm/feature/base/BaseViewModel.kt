@@ -4,6 +4,9 @@ import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableBoolean
 import io.reactivex.disposables.CompositeDisposable
 
+/**
+ * Base ViewModel for initialization and base configurations
+ */
 open class BaseViewModel : ViewModel() {
 
   // Loading Dialog
