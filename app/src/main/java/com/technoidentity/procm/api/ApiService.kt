@@ -1,6 +1,6 @@
 package com.technoidentity.procm.api
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.technoidentity.procm.api.request.login.LoginRequest
 import com.technoidentity.procm.api.response.login.LoginResponse
 import com.technoidentity.procm.database.entity.Task

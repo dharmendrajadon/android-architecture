@@ -1,7 +1,7 @@
 package com.technoidentity.procm.dagger.modules
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.technoidentity.procm.dagger.ViewModelFactory
 import com.technoidentity.procm.dagger.ViewModelKey
 import com.technoidentity.procm.feature.home.HomeViewModel

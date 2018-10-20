@@ -1,6 +1,6 @@
 package com.technoidentity.procm.repository
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import com.technoidentity.procm.api.ApiResponse
 import com.technoidentity.procm.api.ApiService
 import com.technoidentity.procm.database.dao.TaskDao

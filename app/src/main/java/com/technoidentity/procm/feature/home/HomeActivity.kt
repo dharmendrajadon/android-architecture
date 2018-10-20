@@ -1,7 +1,7 @@
 package com.technoidentity.procm.feature.home
 
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.technoidentity.procm.R
 import com.technoidentity.procm.databinding.ActivityHomeBinding
 import com.technoidentity.procm.feature.base.BaseActivity

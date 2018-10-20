@@ -1,7 +1,7 @@
 package com.technoidentity.procm.feature.base
 
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableBoolean
+import androidx.lifecycle.ViewModel
+import androidx.databinding.ObservableBoolean
 import io.reactivex.disposables.CompositeDisposable
 
 /**

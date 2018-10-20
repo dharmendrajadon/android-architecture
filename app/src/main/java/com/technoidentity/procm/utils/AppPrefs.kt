@@ -1,7 +1,6 @@
 package com.technoidentity.procm.utils
 
 import android.content.Context
-import com.technoidentity.procm.utils.Constants
 import net.grandcentrix.tray.AppPreferences
 import javax.inject.Singleton
 

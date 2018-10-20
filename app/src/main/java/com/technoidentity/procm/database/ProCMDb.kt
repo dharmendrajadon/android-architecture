@@ -1,7 +1,7 @@
 package com.technoidentity.procm.database
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
+import androidx.room.Database
+import androidx.room.RoomDatabase
 import com.technoidentity.procm.database.dao.TaskDao
 import com.technoidentity.procm.database.entity.Task
 

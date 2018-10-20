@@ -1,14 +1,13 @@
 package com.technoidentity.procm.feature.base
 
-import android.app.Activity
 import android.app.ProgressDialog
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.support.annotation.LayoutRes
 import android.view.inputmethod.InputMethodManager
+import androidx.annotation.LayoutRes
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.technoidentity.procm.BR
 import dagger.android.support.DaggerAppCompatActivity
 
@@ -82,8 +81,7 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerApp
     val view = this.currentFocus
 
     if (view != null) {
-      val inputMethodManager = getSystemService(
-          Activity.INPUT_METHOD_SERVICE) as? InputMethodManager
+      val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as? InputMethodManager
 
       inputMethodManager?.hideSoftInputFromWindow(view.windowToken, 0)
     }

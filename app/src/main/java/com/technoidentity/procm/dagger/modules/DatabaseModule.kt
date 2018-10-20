@@ -1,7 +1,7 @@
 package com.technoidentity.procm.dagger.modules
 
 import android.app.Application
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import com.technoidentity.procm.database.ProCMDb
 import com.technoidentity.procm.database.dao.TaskDao
 import dagger.Module
