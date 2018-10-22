@@ -20,7 +20,6 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerApp
    *  Base Binding
    */
   private var binding: B? = null
-
   /**
    *  For Injecting Base View Model
    */
@@ -64,7 +63,7 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerApp
 
     // DataBinding
     this.binding?.setVariable(BR.viewModel, this.viewModel)
-    this.binding?.executePendingBindings()
+    this.binding?.setLifecycleOwner(this)
 
     // Progress Dialog
     @Suppress("DEPRECATION")

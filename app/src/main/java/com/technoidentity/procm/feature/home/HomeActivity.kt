@@ -1,11 +1,15 @@
 package com.technoidentity.procm.feature.home
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.technoidentity.procm.R
 import com.technoidentity.procm.databinding.ActivityHomeBinding
 import com.technoidentity.procm.feature.base.BaseActivity
 import com.technoidentity.procm.utils.AppPrefs
+import io.reactivex.Completable
+import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
@@ -28,6 +32,17 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
 
   override fun getViewModel(): HomeViewModel {
     return ViewModelProviders.of(this, viewModelFactory).get(HomeViewModel::class.java)
+  }
+
+  @SuppressLint("CheckResult")
+  override fun onResume() {
+    super.onResume()
+
+    Completable.timer(5, TimeUnit.SECONDS)
+        .observeOn(Schedulers.io())
+        .subscribe {
+          getViewModel().updateMessage()
+        }
   }
 
 }

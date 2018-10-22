@@ -1,19 +1,20 @@
 package com.technoidentity.procm.feature.base
 
-import androidx.lifecycle.ViewModel
 import androidx.databinding.ObservableBoolean
+import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 
 /**
  * Base ViewModel for initialization and base configurations
  */
-open class BaseViewModel : ViewModel() {
+abstract class BaseViewModel : ViewModel() {
 
   // Loading Dialog
   private val isLoading: ObservableBoolean = ObservableBoolean(false)
 
   // Composite Disposable
-  private var compositeDisposable: CompositeDisposable? = CompositeDisposable()
+  protected var compositeDisposable: CompositeDisposable? = CompositeDisposable()
+    private set
 
   /**
    * On ViewModel Cleared
@@ -26,13 +27,6 @@ open class BaseViewModel : ViewModel() {
 
     // Run Super OnCleared()
     super.onCleared()
-  }
-
-  /**
-   * Get Composite Disposable
-   */
-  fun getCompositeDisposable(): CompositeDisposable? {
-    return this.compositeDisposable
   }
 
   /**

@@ -4,6 +4,7 @@ import com.google.firebase.FirebaseApp
 import com.technoidentity.procm.dagger.components.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
+import timber.log.Timber
 
 /**
  * Main application class for base configuration
@@ -17,6 +18,10 @@ class MainApplication : DaggerApplication() {
   override fun onCreate() {
     FirebaseApp.initializeApp(this)
     super.onCreate()
+
+    if (BuildConfig.DEBUG) {
+      Timber.plant(Timber.DebugTree())
+    }
   }
 
   /**
