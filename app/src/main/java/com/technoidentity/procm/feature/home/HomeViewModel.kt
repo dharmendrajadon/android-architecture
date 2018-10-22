@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import com.technoidentity.procm.feature.base.BaseViewModel
 import javax.inject.Inject
 
-
 class HomeViewModel @Inject constructor() : BaseViewModel() {
   val message: MutableLiveData<String> = MutableLiveData()
 

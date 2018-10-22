@@ -34,6 +34,11 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     return ViewModelProviders.of(this, viewModelFactory).get(HomeViewModel::class.java)
   }
 
+  override fun onStart() {
+    super.onStart()
+    showLoading()
+  }
+
   @SuppressLint("CheckResult")
   override fun onResume() {
     super.onResume()
@@ -41,6 +46,7 @@ class HomeActivity : BaseActivity<HomeViewModel, ActivityHomeBinding>() {
     Completable.timer(5, TimeUnit.SECONDS)
         .observeOn(Schedulers.io())
         .subscribe {
+          hideLoading()
           getViewModel().updateMessage()
         }
   }

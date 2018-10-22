@@ -1,14 +1,12 @@
 package com.technoidentity.procm.feature.base
 
-import android.app.ProgressDialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.technoidentity.procm.BR
+import com.technoidentity.procm.ui.LoadingDialog
 import dagger.android.support.DaggerAppCompatActivity
 
 /**
@@ -37,8 +35,7 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerApp
   abstract fun getViewModel(): VM
 
   // For Progress Dialog
-  @Suppress("DEPRECATION")
-  private var progressDialog: android.app.ProgressDialog? = null
+  private var progressDialog: LoadingDialog? = null
 
   /**
    * When Activity is Created
@@ -64,13 +61,6 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerApp
     // DataBinding
     this.binding?.setVariable(BR.viewModel, this.viewModel)
     this.binding?.setLifecycleOwner(this)
-
-    // Progress Dialog
-    @Suppress("DEPRECATION")
-    progressDialog = android.app.ProgressDialog(this)
-    progressDialog?.setCancelable(false)
-    progressDialog?.setProgressStyle(android.app.ProgressDialog.STYLE_SPINNER)
-    progressDialog?.isIndeterminate = true
   }
 
   /**
@@ -89,8 +79,8 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerApp
   /**
    * Show Progress Dialog
    */
-  protected fun showLoading() {
-    this.progressDialog = this.showProgressDialog()
+  protected fun showLoading(message: String? = "") {
+    this.progressDialog = this.showProgressDialog(message)
   }
 
   /**
@@ -116,19 +106,11 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewDataBinding> : DaggerApp
   /**
    * Progress Dialog Indeterminate
    */
-  @Suppress("DEPRECATION")
-  fun showProgressDialog(): ProgressDialog {
+  private fun showProgressDialog(message: String?): LoadingDialog {
 
     // Create a dialog
-    val progressDialog = ProgressDialog(this)
+    val progressDialog = LoadingDialog(this, message)
     progressDialog.show()
-    if (progressDialog.window != null) {
-      progressDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-    }
-    progressDialog.setProgressStyle(android.app.ProgressDialog.STYLE_SPINNER)
-    progressDialog.isIndeterminate = true
-    progressDialog.setCancelable(false)
-    progressDialog.setCanceledOnTouchOutside(false)
     return progressDialog
   }
 }
